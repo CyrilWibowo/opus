@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useCallback } from 'react'
+import React, { useEffect, useLayoutEffect, useRef, useState, useCallback } from 'react'
 
 const BOOKS = [
   { img: '/books/Pride-and-Prejudice--Jane-Austen.jpg', title: 'Pride and Prejudice', author: 'Jane Austen' },
@@ -16,6 +16,7 @@ const BOOKS = [
 function FaithPage({ onClose, visible: isVisible, onBack }) {
   const [animatedIn, setAnimatedIn] = useState(false)
   const contentRef = useRef(null)
+  const cardsRef = useRef(null)
   const heroImgRef = useRef(null)
   const scrollThumbRef = useRef(null)
 
@@ -36,6 +37,21 @@ function FaithPage({ onClose, visible: isVisible, onBack }) {
     } else {
       setAnimatedIn(false)
     }
+  }, [isVisible])
+
+  // Scale cards container to fit viewport width
+  useLayoutEffect(() => {
+    const el = cardsRef.current
+    if (!el) return
+    const update = () => {
+      const parentWidth = el.parentElement?.offsetWidth || window.innerWidth
+      const scale = Math.min(1, parentWidth / 800)
+      el.style.zoom = String(scale)
+    }
+    update()
+    const observer = new ResizeObserver(update)
+    if (el.parentElement) observer.observe(el.parentElement)
+    return () => observer.disconnect()
   }, [isVisible])
 
   useEffect(() => {
@@ -223,7 +239,7 @@ function FaithPage({ onClose, visible: isVisible, onBack }) {
         </div>
 
         <div className="faith-foreground">
-          <div className="faith-cards">
+          <div ref={cardsRef} className="faith-cards">
 
             {/* Home Page */}
             <article className="faith-card faith-page-home">

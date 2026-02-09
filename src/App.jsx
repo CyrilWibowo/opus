@@ -869,7 +869,7 @@ function App() {
             >
               {/* Contents list */}
               <div
-                className="fixed left-8 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-10 transition-opacity duration-500"
+                className="flex fixed left-4 md:left-8 top-1/2 -translate-y-1/2 flex-col gap-4 z-10 transition-opacity duration-500"
                 style={{ opacity: sectionExit >= 0 ? 0 : 1 }}
                 onMouseDown={e => e.stopPropagation()} onTouchStart={e => e.stopPropagation()}
               >
@@ -905,7 +905,7 @@ function App() {
                 ref={expListRef}
                 style={{
                   transform: `translateY(${-aboutScrollY}px)`,
-                  paddingLeft: 'calc(10% + 10vw)',
+                  paddingLeft: 'clamp(1rem, 10% + 5vw, calc(10% + 10vw))',
                   paddingTop: 'calc((100vh - 10rem) / 2 - 10vh)',
                   paddingBottom: 'calc((100vh - 10rem) / 2 - 10vh)',
                   willChange: 'transform',
@@ -917,17 +917,17 @@ function App() {
                   style={{ ...getSectionExitStyle(0), opacity: sectionExit >= 0 ? 0 : 1 }}
                   ref={expRefs[0]}
                 >
-                  <p className="text-white text-5xl font-semibold mb-8 leading-relaxed">
+                  <p className="text-white font-semibold mb-4 md:mb-8 leading-relaxed" style={{ fontSize: 'clamp(1.25rem, 4vw, 3rem)' }}>
                     I am a Full Stack Developer and Software Engineer graduating from the University of New South Wales.
                   </p>
                 </div>
 
                 {/* Bio part 2 */}
                 <div
-                  className="text-left pb-32"
+                  className="text-left pb-16 md:pb-32"
                   style={{ ...getSectionExitStyle(1), opacity: sectionExit >= 1 ? 0 : 1 }}
                 >
-                  <p className="text-white text-5xl font-semibold mb-8 leading-relaxed">
+                  <p className="text-white font-semibold mb-4 md:mb-8 leading-relaxed" style={{ fontSize: 'clamp(1.25rem, 4vw, 3rem)' }}>
                     I specialise in building web apps, always
                     looking to expand my skills and create experiences worth remembering.
                   </p>
@@ -935,50 +935,50 @@ function App() {
 
                 {/* Working Experience heading */}
                 <div style={{ ...getSectionExitStyle(2), opacity: sectionExit >= 2 ? 0 : 1 }}>
-                  <h3 className="text-white text-5xl font-semibold mb-16">Working Experience</h3>
+                  <h3 className="text-white font-semibold mb-8 md:mb-16" style={{ fontSize: 'clamp(1.25rem, 4vw, 3rem)' }}>Working Experience</h3>
                 </div>
 
                 {/* Experience: Freelance */}
                 <div
-                  className="pb-16 pl-20"
+                  className="pb-16 pl-4 md:pl-20"
                   style={{ ...getSectionExitStyle(3), opacity: sectionExit >= 3 ? 0 : 1 }}
                   ref={expRefs[1]}
                 >
-                  <h3 className="text-white font-semibold text-4xl mb-3">Freelance Full Stack & Web Developer</h3>
-                  <p className="text-neutral-600 text-xl">2025 — Present</p>
+                  <h3 className="text-white font-semibold mb-3" style={{ fontSize: 'clamp(1.1rem, 3.5vw, 2.25rem)' }}>Freelance Full Stack & Web Developer</h3>
+                  <p className="text-neutral-600" style={{ fontSize: 'clamp(0.875rem, 2vw, 1.25rem)' }}>2025 — Present</p>
                 </div>
 
                 {/* Experience: Consulting */}
                 <div
-                  className="pl-20"
+                  className="pl-4 md:pl-20"
                   style={{ ...getSectionExitStyle(4), opacity: sectionExit >= 4 ? 0 : 1 }}
                   ref={expRefs[2]}
                 >
-                  <h3 className="text-white font-semibold text-4xl mb-3">Consulting & Technology Intern</h3>
-                  <p className="text-white text-4xl font-semibold">Gate Gourmet</p>
-                  <p className="text-neutral-600 text-xl mt-1">Jan 2025 — Feb 2025</p>
+                  <h3 className="text-white font-semibold mb-3" style={{ fontSize: 'clamp(1.1rem, 3.5vw, 2.25rem)' }}>Consulting & Technology Intern</h3>
+                  <p className="text-white font-semibold" style={{ fontSize: 'clamp(1.1rem, 3.5vw, 2.25rem)' }}>Gate Gourmet</p>
+                  <p className="text-neutral-600 mt-1" style={{ fontSize: 'clamp(0.875rem, 2vw, 1.25rem)' }}>Jan 2025 — Feb 2025</p>
                 </div>
 
                 {/* Socials */}
                 <div
-                  className="pt-32"
+                  className="pt-16 md:pt-32"
                   style={{ ...getSectionExitStyle(5), opacity: sectionExit >= 5 ? 0 : 1 }}
                   ref={expRefs[3]}
                 >
-                  <h3 className="text-white text-5xl font-semibold mb-16">Get in Touch</h3>
-                  <div className="flex gap-12 pl-20 relative">
+                  <h3 className="text-white font-semibold mb-8 md:mb-16" style={{ fontSize: 'clamp(1.25rem, 4vw, 3rem)' }}>Get in Touch</h3>
+                  <div className="flex gap-6 md:gap-12 pl-4 md:pl-20 relative">
                     <a href="https://www.facebook.com/cyril.wibowo.37/" target="_blank" rel="noopener noreferrer" className="group" aria-label="Facebook">
-                      <svg className="w-12 h-12 fill-neutral-600 transition-all duration-700 group-hover:fill-[#1877F2]" viewBox="0 0 24 24">
+                      <svg className="w-8 h-8 md:w-12 md:h-12 fill-neutral-600 transition-all duration-700 group-hover:fill-[#1877F2]" viewBox="0 0 24 24">
                         <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                       </svg>
                     </a>
                     <a href="https://github.com/CyrilWibowo" target="_blank" rel="noopener noreferrer" className="group" aria-label="GitHub">
-                      <svg className="w-12 h-12 fill-neutral-600 transition-all duration-700 group-hover:fill-white" viewBox="0 0 24 24">
+                      <svg className="w-8 h-8 md:w-12 md:h-12 fill-neutral-600 transition-all duration-700 group-hover:fill-white" viewBox="0 0 24 24">
                         <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
                       </svg>
                     </a>
                     <a href="https://www.linkedin.com/in/cyril-wibowo-799712265/" target="_blank" rel="noopener noreferrer" className="group" aria-label="LinkedIn">
-                      <svg className="w-12 h-12 fill-neutral-600 transition-all duration-700 group-hover:fill-[#0A66C2]" viewBox="0 0 24 24">
+                      <svg className="w-8 h-8 md:w-12 md:h-12 fill-neutral-600 transition-all duration-700 group-hover:fill-[#0A66C2]" viewBox="0 0 24 24">
                         <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                       </svg>
                     </a>
@@ -991,7 +991,7 @@ function App() {
                         setTimeout(() => setEmailCopied(false), 2000)
                       }}
                     >
-                      <svg className="w-12 h-12 fill-neutral-600 transition-all duration-700 group-hover:fill-white" viewBox="0 0 24 24">
+                      <svg className="w-8 h-8 md:w-12 md:h-12 fill-neutral-600 transition-all duration-700 group-hover:fill-white" viewBox="0 0 24 24">
                         <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
                         <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
                       </svg>

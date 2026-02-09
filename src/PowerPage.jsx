@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useCallback } from 'react'
+import React, { useEffect, useLayoutEffect, useRef, useState, useCallback } from 'react'
 
 const PIECE = {
   K:'/king-white.webp', Q:'/queen-white.webp', R:'/rook-white.webp',
@@ -34,6 +34,7 @@ const GAME2 = [
 function PowerPage({ onClose, visible: isVisible, onBack }) {
   const [animatedIn, setAnimatedIn] = useState(false)
   const contentRef = useRef(null)
+  const cardsRef = useRef(null)
   const heroImgRef = useRef(null)
   const scrollThumbRef = useRef(null)
 
@@ -54,6 +55,21 @@ function PowerPage({ onClose, visible: isVisible, onBack }) {
     } else {
       setAnimatedIn(false)
     }
+  }, [isVisible])
+
+  // Scale cards container to fit viewport width
+  useLayoutEffect(() => {
+    const el = cardsRef.current
+    if (!el) return
+    const update = () => {
+      const parentWidth = el.parentElement?.offsetWidth || window.innerWidth
+      const scale = Math.min(1, parentWidth / 800)
+      el.style.zoom = String(scale)
+    }
+    update()
+    const observer = new ResizeObserver(update)
+    if (el.parentElement) observer.observe(el.parentElement)
+    return () => observer.disconnect()
   }, [isVisible])
 
   // Calculate max scroll based on content height
@@ -258,7 +274,7 @@ function PowerPage({ onClose, visible: isVisible, onBack }) {
 
         {/* Foreground with framed pages */}
         <div className="power-foreground">
-          <div className="power-cards">
+          <div ref={cardsRef} className="power-cards">
 
             {/* Home Page */}
             <article className="power-card power-page-home">

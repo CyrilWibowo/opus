@@ -942,7 +942,7 @@ body::-webkit-scrollbar {
    ════════════════════════════════════════════════════════════════════════════ */
 
 .death-cards {
-  max-width: 800px;
+  width: 800px;
   margin: 0 auto;
   padding: 0 40px;
   display: flex;
@@ -1222,7 +1222,7 @@ body::-webkit-scrollbar {
 
 .death-soitgoes-text {
   font-family: 'Playfair Display', 'Crimson Text', 'Georgia', serif;
-  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-size: 1.5rem;
   font-weight: 400;
   color: var(--death-warm-white);
   letter-spacing: 0.1em;
@@ -1263,46 +1263,6 @@ body::-webkit-scrollbar {
    ════════════════════════════════════════════════════════════════════════════ */
 
 @media (max-width: 900px) {
-  .death-cards {
-    padding: 0 20px;
-    gap: 20px;
-  }
-
-  .death-wheel-img {
-    height: 60%;
-    max-height: 80px;
-  }
-
-  .death-wheel-img--large {
-    height: 90%;
-    max-height: 120px;
-  }
-
-  .death-wheel-images {
-    gap: 8px;
-  }
-
-  .death-wheel-ornament-line {
-    width: 40px;
-  }
-
-  .death-wheel-ornament svg {
-    width: 40px;
-  }
-
-  .death-page-quote {
-    grid-template-columns: 1fr;
-    aspect-ratio: auto;
-  }
-
-  .death-page-quote-image {
-    aspect-ratio: 4 / 3;
-  }
-
-  .death-page-quote-text {
-    padding: 30px 24px;
-  }
-
   .death-hero-content {
     padding: 0 24px;
   }
@@ -1320,11 +1280,6 @@ body::-webkit-scrollbar {
 
   .death-foreground {
     padding: 48px 0;
-  }
-
-  .death-page-quote + .death-page-soitgoes,
-  .death-page-soitgoes + .death-page-end {
-    margin-top: 80px;
   }
 }
 
@@ -1490,7 +1445,7 @@ body::-webkit-scrollbar {
    ════════════════════════════════════════════════════════════════════════════ */
 
 .wonder-cards {
-  max-width: 800px;
+  width: 800px;
   margin: 0 auto;
   padding: 0 40px;
   display: flex;
@@ -1846,11 +1801,6 @@ body::-webkit-scrollbar {
    ════════════════════════════════════════════════════════════════════════════ */
 
 @media (max-width: 900px) {
-  .wonder-cards {
-    padding: 0 20px;
-    gap: 20px;
-  }
-
   .wonder-back-btn {
     top: 16px;
     left: 16px;
@@ -1864,23 +1814,6 @@ body::-webkit-scrollbar {
 
   .wonder-foreground {
     padding: 48px 0;
-  }
-
-  .wonder-gallery {
-    height: 200px;
-    gap: 6px;
-  }
-
-  .wonder-page-gallery {
-    padding: 20px 12px;
-  }
-
-  .wonder-gallery-side-img {
-    height: 55%;
-  }
-
-  .wonder-gap-5x {
-    margin-top: 80px;
   }
 }
 
@@ -2036,7 +1969,7 @@ body::-webkit-scrollbar {
 
 /* ── Cards Container ── */
 .power-cards {
-  max-width: 800px;
+  width: 800px;
   margin: 0 auto;
   padding: 0 40px;
   display: flex;
@@ -2716,11 +2649,6 @@ body::-webkit-scrollbar {
 
 /* ── Responsive ── */
 @media (max-width: 900px) {
-  .power-cards {
-    padding: 0 20px;
-    gap: 20px;
-  }
-
   .power-back-btn {
     top: 16px;
     left: 16px;
@@ -2734,24 +2662,6 @@ body::-webkit-scrollbar {
 
   .power-foreground {
     padding: 48px 0;
-  }
-
-  .power-chess-sidebar {
-    flex: 0 0 12%;
-    padding: 10px 8px;
-  }
-
-  .power-chess-main {
-    padding: 14px 16px;
-    gap: 10px;
-  }
-
-  .power-chess-modes {
-    gap: 8px;
-  }
-
-  .power-chess-mode-card {
-    padding: 10px 8px;
   }
 }
 
@@ -2895,7 +2805,7 @@ body::-webkit-scrollbar {
 }
 
 .love-cards {
-  max-width: 800px;
+  width: 800px;
   margin: 0 auto;
   padding: 0 40px;
   display: flex;
@@ -3226,11 +3136,6 @@ body::-webkit-scrollbar {
 /* ── Responsive ── */
 
 @media (max-width: 768px) {
-  .love-cards {
-    padding: 0 20px;
-    gap: 20px;
-  }
-
   .love-back-btn {
     top: 16px;
     left: 16px;
@@ -3244,30 +3149,6 @@ body::-webkit-scrollbar {
 
   .love-foreground {
     padding: 40px 0 80px;
-  }
-
-  .love-home-tagline {
-    font-size: 1.2rem;
-  }
-
-  .love-spread-title {
-    font-size: 0.9rem;
-  }
-
-  .love-spread-text {
-    padding: 14px 12px;
-  }
-
-  .love-page-duo {
-    padding: 10px;
-  }
-
-  .love-full-desc {
-    max-width: 90%;
-  }
-
-  .love-gap-5x {
-    margin-top: 60px;
   }
 }
 
@@ -3459,7 +3340,7 @@ body::-webkit-scrollbar {
 }
 
 .faith-cards {
-  max-width: 800px;
+  width: 800px;
   margin: 0 auto;
   padding: 0 40px;
   display: flex;
@@ -3870,11 +3751,6 @@ body::-webkit-scrollbar {
 }
 
 @media (max-width: 768px) {
-  .faith-cards {
-    padding: 0 20px;
-    gap: 20px;
-  }
-
   .faith-back-btn {
     top: 16px;
     left: 16px;
@@ -3888,18 +3764,5 @@ body::-webkit-scrollbar {
 
   .faith-foreground {
     padding: 40px 0 80px;
-  }
-
-  .faith-gallery-grid {
-    grid-template-columns: repeat(5, 1fr);
-    gap: 8px;
-  }
-
-  .faith-page-gallery {
-    padding: 12px;
-  }
-
-  .faith-gap-5x {
-    margin-top: 60px;
   }
 }

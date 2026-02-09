@@ -1,8 +1,9 @@
-import React, { useEffect, useRef, useState, useCallback } from 'react'
+import React, { useEffect, useLayoutEffect, useRef, useState, useCallback } from 'react'
 
 function LovePage({ onClose, visible: isVisible, onBack }) {
   const [animatedIn, setAnimatedIn] = useState(false)
   const contentRef = useRef(null)
+  const cardsRef = useRef(null)
   const heroImgRef = useRef(null)
   const scrollThumbRef = useRef(null)
 
@@ -23,6 +24,21 @@ function LovePage({ onClose, visible: isVisible, onBack }) {
     } else {
       setAnimatedIn(false)
     }
+  }, [isVisible])
+
+  // Scale cards container to fit viewport width
+  useLayoutEffect(() => {
+    const el = cardsRef.current
+    if (!el) return
+    const update = () => {
+      const parentWidth = el.parentElement?.offsetWidth || window.innerWidth
+      const scale = Math.min(1, parentWidth / 800)
+      el.style.zoom = String(scale)
+    }
+    update()
+    const observer = new ResizeObserver(update)
+    if (el.parentElement) observer.observe(el.parentElement)
+    return () => observer.disconnect()
   }, [isVisible])
 
   useEffect(() => {
@@ -210,7 +226,7 @@ function LovePage({ onClose, visible: isVisible, onBack }) {
         </div>
 
         <div className="love-foreground">
-          <div className="love-cards">
+          <div ref={cardsRef} className="love-cards">
 
             {/* Card 1: Home / Landing */}
             <article className="love-card love-page-home">

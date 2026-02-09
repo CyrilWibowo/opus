@@ -1,9 +1,10 @@
-import React, { useEffect, useRef, useState, useCallback } from 'react'
+import React, { useEffect, useLayoutEffect, useRef, useState, useCallback } from 'react'
 
 function WonderPage({ onClose, visible: isVisible, onBack }) {
   const [animatedIn, setAnimatedIn] = useState(false)
   const [scrollY, setScrollY] = useState(0)
   const contentRef = useRef(null)
+  const cardsRef = useRef(null)
   const scrollThumbRef = useRef(null)
 
   // Momentum scrolling state
@@ -23,6 +24,21 @@ function WonderPage({ onClose, visible: isVisible, onBack }) {
     } else {
       setAnimatedIn(false)
     }
+  }, [isVisible])
+
+  // Scale cards container to fit viewport width
+  useLayoutEffect(() => {
+    const el = cardsRef.current
+    if (!el) return
+    const update = () => {
+      const parentWidth = el.parentElement?.offsetWidth || window.innerWidth
+      const scale = Math.min(1, parentWidth / 800)
+      el.style.zoom = String(scale)
+    }
+    update()
+    const observer = new ResizeObserver(update)
+    if (el.parentElement) observer.observe(el.parentElement)
+    return () => observer.disconnect()
   }, [isVisible])
 
   // Calculate max scroll based on content height
@@ -228,7 +244,7 @@ function WonderPage({ onClose, visible: isVisible, onBack }) {
         <div className="wonder-foreground">
 
           {/* Cards Container */}
-          <div className="wonder-cards">
+          <div ref={cardsRef} className="wonder-cards">
 
             {/* Home Page */}
             <article className="wonder-card wonder-page-home">
