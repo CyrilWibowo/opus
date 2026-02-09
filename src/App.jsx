@@ -905,7 +905,7 @@ function App() {
                 ref={expListRef}
                 style={{
                   transform: `translateY(${-aboutScrollY}px)`,
-                  paddingLeft: 'clamp(1rem, 10% + 5vw, calc(10% + 10vw))',
+                  paddingLeft: 'clamp(5rem, 10% + 5vw, calc(10% + 10vw))',
                   paddingTop: 'calc((100vh - 10rem) / 2 - 10vh)',
                   paddingBottom: 'calc((100vh - 10rem) / 2 - 10vh)',
                   willChange: 'transform',
