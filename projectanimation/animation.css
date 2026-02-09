@@ -1,0 +1,122 @@
+# Curiosity: A Visual Journey Through History
+## Website Specification
+
+### Overview
+A single-page scrolling experience exploring how curiosity gives meaning to human existence, illustrated through pivotal historical moments. Clean, professional design with scroll-triggered fade animations.
+
+---
+
+### Technical Structure
+
+**Layout:** Single vertical scroll page
+**Width:** Full viewport, centered content max-width 1400px
+**Scroll behavior:** Smooth, snap-to-section optional
+**Animations:** CSS/JS fade-in on scroll (Intersection Observer API)
+
+---
+
+### Visual Sections
+
+#### 1. Hero Section
+- **Visual:** Large background image of the cosmos/night sky
+- **Text:** "CURIOSITY" (large, serif font, center) + "The meaning we create through questions"
+- **Animation:** Title fades in on load, subtitle delays 0.5s
+
+#### 2. The Library of Alexandria (c. 300 BCE)
+- **Visual:** Full-width historical illustration/artwork of the library
+- **Philosophical text:** "We find purpose in gathering what we don't yet know"
+- **Event caption:** The Library of Alexandria, c. 300 BCE—humanity's first great attempt to collect all knowledge
+- **Animation:** Image fixed parallax, text fades in from bottom as user scrolls into view
+
+#### 3. Leonardo da Vinci's Notebooks (1480s-1519)
+- **Visual:** High-resolution scan of actual notebook pages (anatomical drawings, flying machines)
+- **Philosophical text:** "To question everything is to live fully"
+- **Event caption:** Leonardo da Vinci's notebooks, 1480s-1519—over 7,000 pages of relentless inquiry into how the world works
+- **Animation:** Notebook pages revealed left-to-right as scroll progresses
+
+#### 4. Galileo's Telescope (1609)
+- **Visual:** Historical painting of Galileo with telescope + night sky
+- **Philosophical text:** "Meaning emerges when we dare to look closer"
+- **Event caption:** Galileo turns his telescope to the heavens, 1609—discovering moons around Jupiter and forever changing our place in the cosmos
+- **Animation:** Stars twinkle subtly, text fades in
+
+#### 5. Darwin's Voyage (1831-1836)
+- **Visual:** HMS Beagle illustration + Galápagos landscape
+- **Philosophical text:** "Our lives gain depth through patient observation"
+- **Event caption:** Charles Darwin's voyage on HMS Beagle, 1831-1836—five years of careful attention to finches, tortoises, and the patterns of life
+- **Animation:** Fade in with gentle wave motion on ship
+
+#### 6. Marie Curie's Laboratory (1898)
+- **Visual:** Black and white photo of Curie in her lab
+- **Philosophical text:** "We become who we are by pursuing what others overlook"
+- **Event caption:** Marie Curie discovers radium and polonium, 1898—the first woman to win a Nobel Prize, driven by questions about the invisible
+- **Animation:** Subtle glow effect on image, fade-in text
+
+#### 7. Apollo 8 Earthrise (1968)
+- **Visual:** The famous Earthrise photograph
+- **Philosophical text:** "Sometimes we discover ourselves by seeking the unknown"
+- **Event caption:** Earthrise, photographed from Apollo 8, December 1968—astronauts journeyed to another world and found a new way to see home
+- **Animation:** Image scales slightly as it fades in
+
+#### 8. The Hubble Deep Field (1995)
+- **Visual:** The Hubble Deep Field image
+- **Philosophical text:** "Meaning lives in the questions we ask of empty space"
+- **Event caption:** The Hubble Deep Field, 1995—astronomers pointed a telescope at apparent nothingness for ten days and revealed 3,000 galaxies
+- **Animation:** Slow zoom into the deep field as user scrolls
+
+#### 9. Closing Section
+- **Visual:** Minimal, gradient background (dark to light)
+- **Philosophical text:** "Your curiosity is your compass"
+- **Subtext:** "What questions give your life meaning?"
+- **Animation:** Final fade-in
+
+---
+
+### Design System
+
+**Typography:**
+- Philosophical text: Serif (Playfair Display or Crimson Text), 36-48px
+- Event captions: Sans-serif italic (Inter or Source Sans Pro), 14-16px, muted color
+- Clear visual hierarchy: philosophical statement prominent, historical caption secondary
+
+**Colors:**
+- Neutral palette: Deep navy, charcoal, warm whites
+- Accent: Subtle gold or copper for emphasis
+- Caption text: 60% opacity
+
+**Spacing:**
+- Each section: 100vh height
+- Philosophical text: Centered, 80px from top
+- Event caption: Below philosophical text, 20px gap, max-width 700px
+- Edge padding: 60px
+
+**Animation timing:**
+- Fade duration: 0.8-1.2s
+- Trigger point: When section is 20% in viewport
+- Easing: ease-out
+- Sequence: Image first, philosophical text +0.2s, caption +0.4s
+
+---
+
+### Image Requirements
+
+**Please provide historical images for:**
+1. Library of Alexandria illustration
+2. Leonardo da Vinci notebook scans (anatomical or invention sketches)
+3. Galileo with telescope or period astronomical art
+4. HMS Beagle or Galápagos landscape
+5. Marie Curie laboratory photo
+6. Apollo 8 Earthrise (NASA)
+7. Hubble Deep Field (NASA)
+
+**Format:** High-resolution JPG/PNG, minimum 2000px wide
+
+---
+
+### Implementation Notes
+
+- Mobile responsive: Reduce philosophical text to 24-28px, caption to 12-14px
+- Lazy load images below fold
+- Preload hero image
+- Add subtle scroll indicator on hero
+- Accessibility: Alt text for all images, sufficient contrast ratios (philosophical text 4.5:1, captions 3:1 minimum)
